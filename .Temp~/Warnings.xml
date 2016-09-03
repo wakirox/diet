@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning xpath="id('mov1#mpkg1#hym2#opg2#lgu3')" rootXPath="id('mov1')" error="false" label="Login" key="NO_OUTGOING_OK_LINKS"> 
+    <Message>No outgoing OK flow(s) for the operation 'Login'</Message> 
+  </Warning>  
+  <Warning xpath="id('mov1#mpkg1#hym2#opg2#scu4')" rootXPath="id('mov1')" error="false" label="Calculate Age" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO flow(s) for the operation 'Calculate Age'</Message> 
+  </Warning> 
+</Warnings>

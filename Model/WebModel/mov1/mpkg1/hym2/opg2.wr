@@ -1,0 +1,24 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#mpkg1#hym2#opg2" name="Register" transaction="true" gr:x="550" gr:y="-10">
+  <OperationUnits>
+    <CreateUnit id="mov1#mpkg1#hym2#opg2#cru2" name="Create User" gr:x="335" gr:y="0" entity="User" skipBlankRecords="false" notBlankAttributes="userOID">
+      <OKLink id="mov1#mpkg1#hym2#opg2#cru2#oln10" name="OKLink111" to="mov1#mpkg1#hym2#okcu3" automaticCoupling="false">
+        <LinkParameter id="mov1#mpkg1#hym2#opg2#cru2#oln10#par22" name="password" source="passwordArray" target="mov1#mpkg1#hym2#okcu3#ocp1"/>
+        <LinkParameter id="mov1#mpkg1#hym2#opg2#cru2#oln10#par23" name="username" source="userNameArray" target="mov1#mpkg1#hym2#okcu3#ocp2"/>
+      </OKLink>
+      <KOLink id="mov1#mpkg1#hym2#opg2#cru2#kln2" name="KOFlow2" to="mov1#mpkg1#hym2#page2#mssu2" gr:bendpoints="-93,135,472,45">
+        <LinkParameter id="mov1#mpkg1#hym2#opg2#cru2#kln2#par27" name="User already registered_Shown Messages" sourceValue="User creation error" target="mov1#mpkg1#hym2#page2#mssu2.shownMessages"/>
+      </KOLink>
+    </CreateUnit>
+    <IsNotNullUnit id="mov1#mpkg1#hym2#opg2#inn2" name="Over 18 Years?" gr:x="165" gr:y="20">
+      <OKLink id="mov1#mpkg1#hym2#opg2#inn2#oln11" name="OKLink114" to="mov1#mpkg1#hym2#opg2#cru2"/>
+      <KOLink id="mov1#mpkg1#hym2#opg2#inn2#kln3" name="KOLink18" to="mov1#mpkg1#hym2#page2#mssu2" preserveForm="true" ajaxOpenWindow="false" ajaxWindowUseTitle="true" ajaxWindowTitle="Error" ajaxWindowAutoResizing="true" ajaxWindowDraggable="true" gr:bendpoints="0,89,410,-1">
+        <LinkParameter id="mov1#mpkg1#hym2#opg2#inn2#kln3#par14" name="Message" target="mov1#mpkg1#hym2#page2#mssu2.shownMessages" sourceValue="User Must have at least 18 years"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <ScriptUnit id="mov1#mpkg1#hym2#opg2#scu4" name="Calculate Age" gr:x="0" gr:y="30" script="WEB-INF/descr/groovy/Over18user.groovy">
+      <OKLink id="mov1#mpkg1#hym2#opg2#scu4#oln12" name="OKLink115" to="mov1#mpkg1#hym2#opg2#inn2">
+        <LinkParameter id="mov1#mpkg1#hym2#opg2#scu4#oln12#par15" name="Result" source="result" target="mov1#mpkg1#hym2#opg2#inn2.isnotnull"/>
+      </OKLink>
+    </ScriptUnit>
+  </OperationUnits>
+</OperationGroup>

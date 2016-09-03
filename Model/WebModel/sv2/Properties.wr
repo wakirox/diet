@@ -1,0 +1,3 @@
+<SiteView id="sv2" name="Patient" protected="true" landmarks="sv2#area1" homePage="sv2#area1#page3" linkVisibilityPolicy="always">
+  <OperationUnits/>
+</SiteView>

@@ -1,0 +1,119 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="mov1#mpkg1#hym2#page2" name="Registration" gr:x="295" gr:y="20">
+  <ContentUnits>
+    <EntryUnit id="mov1#mpkg1#hym2#page2#enu2" name="User Information" linkOrder="mov1#mpkg1#hym2#page2#enu2#ln4" gr:x="0" gr:y="0" entity="User" fieldOrder="mov1#mpkg1#hym2#page2#enu2#fld13 mov1#mpkg1#hym2#page2#enu2#fld16 mov1#mpkg1#hym2#page2#enu2#fld17 mov1#mpkg1#hym2#page2#enu2#sfld2 mov1#mpkg1#hym2#page2#enu2#sfld3 mov1#mpkg1#hym2#page2#enu2#fld12 mov1#mpkg1#hym2#page2#enu2#fld11 mov1#mpkg1#hym2#page2#enu2#fld19">
+      <Field id="mov1#mpkg1#hym2#page2#enu2#fld11" name="password" type="password" modifiable="true" attribute="password">
+        <VRules>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld11#mnd12" name="Mandatory password" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#mpkg1#hym2#page2#enu2#fld12" name="email" type="string" modifiable="true" attribute="email">
+        <VRules>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld12#mnd13" name="Mandatory e-mail" errorMessage="Obbligatory field"/>
+          <EMailValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld12#email2" name="email validation" errorMessage="Wrong Email"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#mpkg1#hym2#page2#enu2#fld13" name="first name" type="string" modifiable="true" attribute="User#att1">
+        <VRules>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld13#mnd14" name="Mandatory name" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#mpkg1#hym2#page2#enu2#fld16" name="last name" type="string" modifiable="true" attribute="User#att2">
+        <VRules>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld16#mnd17" name="Mandatory Last name" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <Field id="mov1#mpkg1#hym2#page2#enu2#fld17" name="birth date" type="date" modifiable="true" preloaded="false" attribute="User#att5">
+        <VRules>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld17#mnd18" name="Mandatory Birthdate" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <VRules/>
+      <Field id="mov1#mpkg1#hym2#page2#enu2#fld19" name="confirm password" ajaxEventEnabled="false" type="password" modifiable="true">
+        <VRules>
+          <CompareValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld19#cmp2" name="Require Same Password" predicate="eq" valueField="mov1#mpkg1#hym2#page2#enu2#fld11" errorMessage="This field and password have to be equal!!!"/>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#fld19#mnd20" name="Mandatory password" errorMessage="Obbligatory field"/>
+        </VRules>
+      </Field>
+      <SelectionField id="mov1#mpkg1#hym2#page2#enu2#sfld2" name="gender" type="string" slotOrder="mov1#mpkg1#hym2#page2#enu2#sfld2#slot4" attribute="User#att4">
+        <Slot id="mov1#mpkg1#hym2#page2#enu2#sfld2#slot4" name="gender" value="Male|Female" label="true" output="true"/>
+        <VRules>
+          <MandatoryValidationRule id="mov1#mpkg1#hym2#page2#enu2#sfld2#mnd22" name="Mandatory Field" errorMessage="Choose a Gender"/>
+        </VRules>
+      </SelectionField>
+      <Link id="mov1#mpkg1#hym2#page2#enu2#ln3" name="Link125" to="mov1#mpkg1#hym2#opg2#cru2" type="transport" validate="true" gr:bendpoints="132,-41,-353,-41;415,-41,-70,-41">
+        <LinkParameter id="mov1#mpkg1#hym2#page2#enu2#ln3#par7" name="1_Group.oid(defaultGroup)" sourceValue="1" target="mov1#mpkg1#hym2#opg2#cru2.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov1#mpkg1#hym2#page2#enu2#ln3#par12" name="1_Group.oid(groups)" sourceValue="1" target="mov1#mpkg1#hym2#opg2#cru2.User2Group.groupOID"/>
+        <LinkParameter id="mov1#mpkg1#hym2#page2#enu2#ln3#par13" name="User Object_User Object" source="entityBean" target="mov1#mpkg1#hym2#opg2#cru2.entityBeans"/>
+        <LinkParameter id="mov1#mpkg1#hym2#page2#enu2#ln3#par20" name="email_username" source="mov1#mpkg1#hym2#page2#enu2#fld12" target="mov1#mpkg1#hym2#opg2#cru2.userName"/>
+      </Link>
+      <Link id="mov1#mpkg1#hym2#page2#enu2#ln4" name="Confirm" to="mov1#mpkg1#hym2#opg2#scu4" type="normal" validate="true" ajaxEnabled="true">
+        <LinkParameter id="mov1#mpkg1#hym2#page2#enu2#ln4#par21" name="Birth Date" source="mov1#mpkg1#hym2#page2#enu2#fld17" target="mov1#mpkg1#hym2#opg2#scu4.timein"/>
+      </Link>
+      <SelectionField id="mov1#mpkg1#hym2#page2#enu2#sfld3" name="role" type="string" modifiable="true" slotOrder="mov1#mpkg1#hym2#page2#enu2#sfld3#slot7" attribute="User#att3">
+        <Slot id="mov1#mpkg1#hym2#page2#enu2#sfld3#slot7" name="role" value="Patient|Doctor" label="true" output="true"/>
+      </SelectionField>
+    </EntryUnit>
+    <MultiMessageUnit id="mov1#mpkg1#hym2#page2#mssu2" name="Notifications" gr:x="90" gr:y="190">
+      <Message xml:space="preserve">Compile the following fields</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#mpkg1#hym2#page2#mssu2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#mpkg1#hym2#page2#enu2">
+          <layout:LayoutParameter name="mandatory-fields" value="true" type="unit"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#fld13"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#fld16"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#fld17"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#sfld2"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#sfld3"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#fld12"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#fld11"/>
+          <layout:Field field="mov1#mpkg1#hym2#page2#enu2#fld19"/>
+          <layout:Link link="mov1#mpkg1#hym2#page2#enu2#ln4"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

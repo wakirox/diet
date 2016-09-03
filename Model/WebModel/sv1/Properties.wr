@@ -1,0 +1,21 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Public" landmarks="sv1#area3" homePage="sv1#area3#page6">
+  <OperationUnits>
+    <LogoutUnit id="sv1#lou1" name="Logout" landmark="false" gr:x="635" gr:y="75" siteView="sv1" invalidateSession="true" protected="false"/>
+    <LoginUnit id="sv1#lgu2" name="Login" gr:x="540" gr:y="165">
+      <KOLink id="sv1#lgu2#kln5" name="KOFlow5" to="sv1#mpage2#mssu13">
+        <LinkParameter id="sv1#lgu2#kln5#par43" name="Email or Password uncorrect_Shown Messages" sourceValue="Email or Password uncorrect" target="sv1#mpage2#mssu13.shownMessages"/>
+      </KOLink>
+    </LoginUnit>
+    <ModuleInstanceUnit gr:x="465" gr:y="295" id="sv1#miu2" moduleId="mov1#mpkg1#hym2" action="false" name="Registration" ignoreMasterPage="true">
+      <OKLink id="sv1#miu2#oln5" name="OKFlow5" to="sv1#lgu2" automaticCoupling="true" gr:bendpoints="131,-73,106,62"/>
+    </ModuleInstanceUnit>
+    <SwitchUnit gr:x="720" gr:y="-30" id="sv1#switch3" name="Switch">
+      <Link id="sv1#switch3#ln12" name="Flow12" to="sv1#area3#page8" type="transport" validate="true" automaticCoupling="true"/>
+      <Case value="patient"/>
+    </SwitchUnit>
+    <SwitchUnit gr:x="535" gr:y="-15" id="sv1#switch4" name="Switch">
+      <Link id="sv1#switch4#ln15" name="Flow15" to="sv1#area3#page7" automaticCoupling="true" type="transport" validate="true" newWindow="true"/>
+      <Case value="doctor"/>
+    </SwitchUnit>
+  </OperationUnits>
+</SiteView>

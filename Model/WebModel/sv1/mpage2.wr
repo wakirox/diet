@@ -1,0 +1,118 @@
+<MasterPage xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#mpage2" name="Master Page" gr:x="105" gr:y="35" localized="false" gr:hide="false">
+  <ContentUnits>
+    <GetUnit id="sv1#mpage2#gtu2" name="Get Current User Key" gr:x="0" gr:y="10" contextParameters="UserCtxParam">
+      <Link id="sv1#mpage2#gtu2#ln9" name="Link37" to="sv1#mpage2#dau2" type="transport" automaticCoupling="true" validate="true"/>
+    </GetUnit>
+    <DataUnit id="sv1#mpage2#dau2" name="Logged in user" linkOrder="sv1#mpage2#dau2#ln10" gr:x="190" gr:y="0" entity="User" gr:showAllParts="false" displayAttributes="email">
+      <Selector id="sv1#mpage2#dau2#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#mpage2#dau2#su2#kcond2" name="User" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#mpage2#dau2#ln10" name="Logout" to="sv1#lou1" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv1#mpage2#dau2#ln11" name="Flow11" to="sv1#switch3" type="transport" validate="true">
+        <LinkParameter id="sv1#mpage2#dau2#ln11#par8" name="role_PASSING" source="data.User#att3" passing="true"/>
+      </Link>
+      <Link id="sv1#mpage2#dau2#ln14" name="Flow14" to="sv1#switch4" type="transport" validate="true">
+        <LinkParameter id="sv1#mpage2#dau2#ln14#par9" name="role_PASSING" source="data.User#att3" passing="true"/>
+      </Link>
+      <Link id="sv1#mpage2#dau2#ln16" name="Flow16" to="sv1#mpage2#mssu13" type="transport" validate="true">
+        <LinkParameter id="sv1#mpage2#dau2#ln16#par10" name="role_PASSING" source="data.User#att3" passing="true"/>
+        <LinkParameter id="sv1#mpage2#dau2#ln16#par11" name="role_Shown Messages" target="sv1#mpage2#mssu13.shownMessages" source="data.User#att3"/>
+      </Link>
+    </DataUnit>
+    <MultiMessageUnit gr:x="175" gr:y="185" id="sv1#mpage2#mssu13" name="ErrorMessage"/>
+    <MultiMessageUnit id="sv1#mpage2#mssu1" name="Registration" linkOrder="sv1#mpage2#mssu1#ln2" gr:x="20" gr:y="230">
+      <Message xml:space="preserve">Registration
+</Message>      <Link id="sv1#mpage2#mssu1#ln2" name="Sign Up" to="sv1#miu2" type="normal" automaticCoupling="true" validate="true"/>    </MultiMessageUnit>    <EntryUnit id="sv1#mpage2#enu1" name="Login" linkOrder="sv1#mpage2#enu1#ln1" gr:x="35" gr:y="100">      <Field id="sv1#mpage2#enu1#fld1" name="email" type="string" modifiable="true">        <VRules>          <MandatoryValidationRule id="sv1#mpage2#enu1#fld1#mnd1" name="Mandatory Field"/>        </VRules>      </Field>      <Field id="sv1#mpage2#enu1#fld2" name="password" type="password" modifiable="true">        <VRules>          <MandatoryValidationRule id="sv1#mpage2#enu1#fld2#mnd2" name="Mandatory Field"/>        </VRules>      </Field>      <Link id="sv1#mpage2#enu1#ln1" name="Login" to="sv1#lgu2" type="normal" validate="true" ajaxEnabled="false">        <LinkParameter id="sv1#mpage2#enu1#ln1#par4" name="Username" source="sv1#mpage2#enu1#fld1" target="sv1#lgu2.username"/>        <LinkParameter id="sv1#mpage2#enu1#ln1#par5" name="Password" source="sv1#mpage2#enu1#fld2" target="sv1#lgu2.password"/>      </Link>    </EntryUnit>  </ContentUnits>  <ConditionExpression id="sv1#mpage2#cexpr2" name="seelogin">    <TextValue xml:space="preserve">UserCtxParam == '0'</TextValue>
+  </ConditionExpression>
+  <Comment xml:space="preserve">Here the information related to a specific User are shown, and also the actions that a User can do (Login / Register / Logout).</Comment>
+  <layout:CustomLocation name="Right">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv1#mpage2#mssu13"/>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv1#mpage2#enu1">
+                  <layout:Field field="sv1#mpage2#enu1#fld1"/>
+                  <layout:Field field="sv1#mpage2#enu1#fld2"/>
+                  <layout:Link link="sv1#mpage2#enu1#ln1"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv1#mpage2#mssu1">
+                  <layout:Link link="sv1#mpage2#mssu1#ln2"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+  <layout:CustomLocation name="Top">
+    <layout:Grid containerType="cell">
+      <layout:Row>
+        <layout:Cell>
+          <layout:Unit unitId="sv1#mpage2#dau2">
+            <layout:Attribute attribute="email"/>
+            <layout:Link link="sv1#mpage2#dau2#ln10"/>
+          </layout:Unit>
+        </layout:Cell>
+      </layout:Row>
+    </layout:Grid>
+  </layout:CustomLocation>
+</MasterPage>

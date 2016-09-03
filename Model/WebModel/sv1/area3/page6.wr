@@ -1,0 +1,11 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area3#page6" name="Home Page" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="0" gr:y="0" id="sv1#area3#page6#mssu10" name="Hello!">
+      <Message xml:space="preserve">Welcome to your personal diet manager. 
+Sign up as a doctor or a patient and you'll be able to give or receive precius diet advices.
+</Message>    </MultiMessageUnit>  </ContentUnits>  <layout:Grid>    <layout:Row>      <layout:Cell colspan="6">        <layout:Grid containerType="cell">          <layout:Row>            <layout:Cell/>          </layout:Row>        </layout:Grid>      </layout:Cell>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell colspan="6"/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>    </layout:Row>    <layout:Row>      <layout:Cell colspan="12"/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>    </layout:Row>    <layout:Row>      <layout:Cell colspan="12">        <layout:Unit unitId="sv1#area3#page6#mssu10"/>      </layout:Cell>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>      <layout:Cell/>    </layout:Row>  </layout:Grid>  <Comment xml:space="preserve">This is the home Page of the Public Site View. 
+
+Here all the Books are shown, filtered by Category, and also all the highlighted Books are shown aside.
+
+A logged in User can open in a popup page his own Cart to check the status.</Comment>
+</Page>

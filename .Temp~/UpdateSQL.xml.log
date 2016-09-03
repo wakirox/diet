@@ -1,0 +1,38 @@
+[30 ago 2016 18:14:53] DEBUG Executing SQL script
+[30 ago 2016 18:14:53] INFO ================================================================================
+[30 ago 2016 18:14:53] INFO onError= 'stop'
+[30 ago 2016 18:14:53] INFO autoCommit= 'false'
+[30 ago 2016 18:14:53] INFO username= 'manager'
+[30 ago 2016 18:14:53] INFO outputPath= '/home/wakirox/Scaricati/wakirox_programs/WebRatio/WebRatio/workspace/Dieta/.Temp~/UpdateSQL.xml'
+[30 ago 2016 18:14:53] INFO outputLogPath= '/home/wakirox/Scaricati/wakirox_programs/WebRatio/WebRatio/workspace/Dieta/.Temp~/UpdateSQL.xml.log'
+[30 ago 2016 18:14:53] INFO encoding= ''
+[30 ago 2016 18:14:53] INFO driverClass= 'org.apache.derby.jdbc.ClientDriver'
+[30 ago 2016 18:14:53] INFO sqlScript= '/home/wakirox/Scaricati/wakirox_programs/WebRatio/WebRatio/workspace/Dieta/.Temp~/UpdateSQL.sql'
+[30 ago 2016 18:14:53] INFO eventSocketPort= '41636'
+[30 ago 2016 18:14:53] INFO statementSeparator= ';'
+[30 ago 2016 18:14:53] INFO derby.system.home= '/home/wakirox/Scaricati/wakirox_programs/WebRatio/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[30 ago 2016 18:14:53] INFO password= 'manager'
+[30 ago 2016 18:14:53] INFO url= 'jdbc:derby://localhost:50124/DietaDB2;create=true'
+[30 ago 2016 18:14:53] INFO ================================================================================
+[30 ago 2016 18:14:53] INFO Connecting to the Database...
+[30 ago 2016 18:14:53] INFO Database connection estabilished
+[30 ago 2016 18:14:53] INFO transaction isolation: 2
+[30 ago 2016 18:14:53] DEBUG ================================================================================
+[30 ago 2016 18:14:53] DEBUG Executing SQL script file: /home/wakirox/Scaricati/wakirox_programs/WebRatio/WebRatio/workspace/Dieta/.Temp~/UpdateSQL.sql
+[30 ago 2016 18:14:54] DEBUG Executing statement:  create table "APP"."GROUP" ( "OID"  integer  not null, "GROUPNAME"  varchar(255), primary key ("OID") )
+[30 ago 2016 18:14:54] DEBUG Executing statement:    create table "APP"."MODULE" ( "OID"  integer  not null, "MODULEID"  varchar(255), "MODULENAME"  varchar(255), primary key ("OID") )
+[30 ago 2016 18:14:54] DEBUG Executing statement:    create table "APP"."USER" ( "OID"  integer  not null, "USERNAME"  varchar(255), "PASSWORD"  varchar(255), "EMAIL"  varchar(255), "FIRST_NAME"  varchar(255), "LAST_NAME"  varchar(255), "ROLE"  varchar(255), "GENDER"  varchar(255), "BIRTH_DATE"  date, primary key ("OID") )
+[30 ago 2016 18:14:54] DEBUG Executing statement:    alter table "APP"."GROUP"  add column  "MODULE_OID"  integer
+[30 ago 2016 18:14:54] DEBUG Executing statement:  alter table "APP"."GROUP"   add constraint FK_GROUP_MODULE foreign key ("MODULE_OID") references "APP"."MODULE" ("OID")
+[30 ago 2016 18:14:54] DEBUG Executing statement:    create table "APP"."GROUP_MODULE" ( "GROUP_OID"  integer not null, "MODULE_OID"  integer not null, primary key ("GROUP_OID", "MODULE_OID") )
+[30 ago 2016 18:14:54] DEBUG Executing statement:  alter table "APP"."GROUP_MODULE"   add constraint FK_GROUP_MODULE_GROUP foreign key ("GROUP_OID") references "APP"."GROUP" ("OID")
+[30 ago 2016 18:14:54] DEBUG Executing statement:  alter table "APP"."GROUP_MODULE"   add constraint FK_GROUP_MODULE_MODULE foreign key ("MODULE_OID") references "APP"."MODULE" ("OID")
+[30 ago 2016 18:14:54] DEBUG Executing statement:    alter table "APP"."USER"  add column  "GROUP_OID"  integer
+[30 ago 2016 18:14:54] DEBUG Executing statement:  alter table "APP"."USER"   add constraint FK_USER_GROUP foreign key ("GROUP_OID") references "APP"."GROUP" ("OID")
+[30 ago 2016 18:14:54] DEBUG Executing statement:    create table "APP"."USER_GROUP" ( "USER_OID"  integer not null, "GROUP_OID"  integer not null, primary key ("USER_OID", "GROUP_OID") )
+[30 ago 2016 18:14:54] DEBUG Executing statement:  alter table "APP"."USER_GROUP"   add constraint FK_USER_GROUP_USER foreign key ("USER_OID") references "APP"."USER" ("OID")
+[30 ago 2016 18:14:54] DEBUG Executing statement:  alter table "APP"."USER_GROUP"   add constraint FK_USER_GROUP_GROUP foreign key ("GROUP_OID") references "APP"."GROUP" ("OID")
+[30 ago 2016 18:14:54] DEBUG ================================================================================
+[30 ago 2016 18:14:54] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[30 ago 2016 18:14:54] INFO Database connection closed
+[30 ago 2016 18:14:54] DEBUG Total time: 782 milliseconds
